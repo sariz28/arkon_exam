@@ -1,4 +1,4 @@
-package com.arkon.exam.web;
+package com.arkon.exam.model;
 
 import java.sql.Timestamp;
 

@@ -1,7 +1,10 @@
-package com.arkon.exam.web;
+package com.arkon.exam.graphql.fetcher;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.arkon.exam.model.Town;
+import com.arkon.exam.repository.TownRepository;
 
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;

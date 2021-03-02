@@ -1,4 +1,4 @@
-package com.arkon.exam.web;
+package com.arkon.exam.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,14 +16,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 @RequestMapping("/towns")
-@Api(value="/towns", tags = "Alcadías en la CDMX")
+@Api(value="/towns", tags = "Towns Service")
 public class TownsController {
 	
 	@Autowired
 	private GraphQL graphQL;
 
 	@PostMapping
-	@ApiOperation(value = "Consulta de alcaldías disponibles implementando Graphql")
+	@ApiOperation(value = "Provides boroughs of CDMX data by Graphql")
 	public ResponseEntity<Object> tonws(@RequestBody String query) {
 	
 		ExecutionResult excecute = graphQL.execute(query);

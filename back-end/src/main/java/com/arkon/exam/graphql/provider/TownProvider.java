@@ -1,4 +1,4 @@
-package com.arkon.exam.web;
+package com.arkon.exam.graphql.provider;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +11,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
+import com.arkon.exam.graphql.fetcher.AllTownsDataFetcher;
+import com.arkon.exam.graphql.fetcher.TownDataFetcher;
+
 import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
@@ -20,7 +23,7 @@ import graphql.schema.idl.TypeDefinitionRegistry;
 
 
 @Component
-public class GraphQLProvider {
+public class TownProvider {
 		    
 	    @Autowired
 	    private AllTownsDataFetcher allTownsDataFetcher;
