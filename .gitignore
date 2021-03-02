@@ -1,4 +1,10 @@
 application.yml
 build/
 .gradle/
+.settings/
 data/
+bin/
+.classpath
+.project
+settings.gradle
+build.gradle

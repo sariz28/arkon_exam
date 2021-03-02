@@ -13,11 +13,12 @@ import lombok.*;
 @Setter
 @Getter
 @Builder
-@SuppressWarnings("unused")
+
 public class Town {
 	
 	@Id
 	private Integer id;
 	private String name;
+	
 
 }

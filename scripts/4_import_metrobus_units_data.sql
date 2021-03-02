@@ -1,5 +1,5 @@
-BULK INSERT dbo.metrobus_units
-FROM '/home/sara/Documentos/arkon_exam/data/metrobus_units/processed/28012021/db/data.csv'
+BULK INSERT dbo.metrobus_units_locations
+FROM '/home/sara/Documentos/arkon_exam/data/metrobus_units_locations/processed/28012021/db/data.csv'
 WITH
  (
  	FIRSTROW = 2,

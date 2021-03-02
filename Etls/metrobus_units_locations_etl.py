@@ -29,7 +29,7 @@ if __name__ == '__main__':
                                engine='pyarrow')
     towns_df['geo_shape'] = towns_df['geo_shape'].apply(parse_request)
 
-    transport_units_df = pd.read_csv('{}/metrobus_units/raw/{}/metrobus_data.csv'.format(DATA_PATH, DATA_VERSION))
+    transport_units_df = pd.read_csv('{}/metrobus_units_locations/raw/{}/metrobus_data.csv'.format(DATA_PATH, DATA_VERSION))
     transport_units_df = transport_units_df.rename(columns={'position_latitude': 'latitude',
                                                             'position_longitude': 'longitude'
                                                             })
@@ -69,15 +69,11 @@ if __name__ == '__main__':
     transport_units_geo_df = transport_units_geo_df[TRANSPORT_UNITS_COLUMNS]
     transport_units_db_df = transport_units_geo_df[transport_units_geo_df['id_town'] != 0]
 
-    transport_units_db_df.to_csv('{}/metrobus_units/processed/{}/db/data.csv'.format(DATA_PATH, DATA_VERSION),
+    transport_units_db_df.to_csv('{}/metrobus_units_locations/processed/{}/db/data.csv'.format(DATA_PATH, DATA_VERSION),
                                  index=False,
                                  encoding='utf-16')
 
     transport_units_geo_df = transport_units_geo_df.drop(columns=['id'])
-    transport_units_db_df.to_csv('{}/metrobus_units/processed/{}/db/data.csv'.format(DATA_PATH, DATA_VERSION),
-                                 index=False,
-                                 encoding='utf-16')
-
-    transport_units_geo_df.to_parquet('{}/metrobus_units/processed/{}/parquet/data.parquet'.format(DATA_PATH,
+    transport_units_geo_df.to_parquet('{}/metrobus_units_locations/processed/{}/parquet/data.parquet'.format(DATA_PATH,
                                                                                                    DATA_VERSION),
                                       engine='pyarrow')

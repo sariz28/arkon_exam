@@ -1,0 +1,11 @@
+schema{
+ query:Query
+}
+type Query{
+ allTowns: [Town]
+ town(id:Int): Town
+}
+type Town{
+ id:Int
+ name:String
+}
