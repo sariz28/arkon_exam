@@ -35,6 +35,7 @@ dependencies {
         compile 'com.graphql-java:graphql-java-extended-scalars:15.0.0' 
         implementation group: 'com.microsoft.sqlserver', name: 'mssql-jdbc'
         testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+        testCompile "junit:junit:4.12"
         compileOnly 'org.projectlombok:lombok:1.18.16'
 		annotationProcessor 'org.projectlombok:lombok:1.18.16'
 		testCompileOnly 'org.projectlombok:lombok:1.18.16'
@@ -44,4 +45,3 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
-

@@ -8,6 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,10 +21,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TownsController {
 	
 	@Autowired
+	@Qualifier(value = "townGraphQL")
 	private GraphQL graphQL;
 
 	@PostMapping
-	@ApiOperation(value = "Provides boroughs of CDMX data by Graphql")
+	@ApiOperation(value = "Provides boroughs data by Graphql")
 	public ResponseEntity<Object> tonws(@RequestBody String query) {
 	
 		ExecutionResult excecute = graphQL.execute(query);
