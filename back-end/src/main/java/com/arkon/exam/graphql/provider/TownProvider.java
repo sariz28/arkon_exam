@@ -10,9 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
-
-import com.arkon.exam.graphql.fetcher.AllTownsDataFetcher;
-import com.arkon.exam.graphql.fetcher.TownDataFetcher;
+import com.arkon.exam.graphql.fetcher.TownDataFetchers;
 
 import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
@@ -24,12 +22,9 @@ import graphql.schema.idl.TypeDefinitionRegistry;
 
 @Component
 public class TownProvider {
-		    
+		    	    
 	    @Autowired
-	    private AllTownsDataFetcher allTownsDataFetcher;
-	    
-	    @Autowired
-	    private TownDataFetcher townDataFetcher;
+	    private TownDataFetchers townDataFetchers;
 	    
 	    @Value("classpath:town_schema.graphql")
 	    private Resource resource;
@@ -54,8 +49,8 @@ public class TownProvider {
 	    private RuntimeWiring buildRuntimeWiring() {
 	        return RuntimeWiring.newRuntimeWiring()
 	                .type("Query", typeWiring -> typeWiring
-	                        .dataFetcher("allTowns", allTownsDataFetcher)
-	                        .dataFetcher("town", townDataFetcher))
+	                        .dataFetcher("allTowns", townDataFetchers.getAllDataFetcher())
+	                        .dataFetcher("town", townDataFetchers.getTownByIdDataFetcher()))
 	                .build();
 	    }
 

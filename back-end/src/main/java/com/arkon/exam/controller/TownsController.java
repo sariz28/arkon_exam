@@ -23,7 +23,7 @@ public class TownsController {
 	private GraphQL graphQL;
 
 	@PostMapping
-	@ApiOperation(value = "Provides boroughs of CDMX data by Graphql")
+	@ApiOperation(value = "Provides boroughs data by Graphql")
 	public ResponseEntity<Object> tonws(@RequestBody String query) {
 	
 		ExecutionResult excecute = graphQL.execute(query);
