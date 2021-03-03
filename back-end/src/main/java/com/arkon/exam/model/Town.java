@@ -20,5 +20,7 @@ public class Town {
 	private Integer id;
 	private String name;
 	
-
+	public Town(Integer id){
+		this.id = id;
+	}
 }
