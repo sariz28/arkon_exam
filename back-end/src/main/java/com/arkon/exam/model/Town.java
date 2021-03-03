@@ -1,4 +1,4 @@
-package com.arkon.exam.web;
+package com.arkon.exam.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,11 +13,12 @@ import lombok.*;
 @Setter
 @Getter
 @Builder
-@SuppressWarnings("unused")
+
 public class Town {
 	
 	@Id
 	private Integer id;
 	private String name;
+	
 
 }
