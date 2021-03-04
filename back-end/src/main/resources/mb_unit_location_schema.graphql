@@ -1,0 +1,31 @@
+
+schema{
+ query:Query
+}
+
+type Query{
+ allMbUnitLocations: [MbUnitLocation]
+ mbUnitLocationsById(vehicleId:Int): [MbUnitLocation]
+ mbUnitLocationsByTow(townId:Int): [MbUnitLocation]
+ mbUnitLocationsByFilter(filter:MbUnitLocationFilter): [MbUnitLocation]
+}
+
+type MbUnitLocation{
+ id:Int
+ vehicleId:Int!
+ dateUpdated:String!
+ latitude:Float!
+ longitude:Float!
+ town:Town
+}
+
+type Town{
+ id:Int
+ name:String
+}
+
+input MbUnitLocationFilter{
+	vehicleId:Int
+	date:String
+	townId:Int
+}
