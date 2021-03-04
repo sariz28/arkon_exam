@@ -47,4 +47,9 @@ public class MbUnitLocation {
         @JoinColumn(name="town_id", referencedColumnName="id"),
     })
     private Town town;
+	
+	public String getDateUpdated() {
+		
+		return dateUpdated.toString();
+	}
 }

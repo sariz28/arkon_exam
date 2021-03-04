@@ -1,4 +1,3 @@
-scalar DateTime
 
 schema{
  query:Query
@@ -14,7 +13,7 @@ type Query{
 type MbUnitLocation{
  id:Int
  vehicleId:Int!
- dateUpdated:DateTime!
+ dateUpdated:String!
  latitude:Float!
  longitude:Float!
  town:Town

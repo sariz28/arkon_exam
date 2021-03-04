@@ -1,7 +1,9 @@
 package com.arkon.exam.graphql.provider;
 
-import java.io.File;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import javax.annotation.PostConstruct;
 
@@ -14,7 +16,6 @@ import org.springframework.stereotype.Component;
 import com.arkon.exam.graphql.fetcher.MbUnitLocationDataFetchers;
 
 import graphql.GraphQL;
-import graphql.scalars.ExtendedScalars;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
@@ -29,6 +30,7 @@ public class MbUnitLocationProvider {
 	
 	@Value("classpath:mb_unit_location_schema.graphql")
     private Resource resource;
+	
     private GraphQL graphQL;
     
     @Bean(name ="MbUnitLocationGraphQL")
@@ -38,8 +40,9 @@ public class MbUnitLocationProvider {
 
     @PostConstruct
     public void init() throws IOException {
-        File file = resource.getFile();
-        TypeDefinitionRegistry typeDefinitionRegistry = new SchemaParser().parse(file);
+    	InputStream is = resource.getInputStream();
+		String schemaGraphql = getLoadSchema(is);
+        TypeDefinitionRegistry typeDefinitionRegistry = new SchemaParser().parse(schemaGraphql);
         RuntimeWiring runtimeWiring = buildRuntimeWiring();
         GraphQLSchema graphQLSchema = new SchemaGenerator().makeExecutableSchema(typeDefinitionRegistry, 
         																		 runtimeWiring);
@@ -49,7 +52,6 @@ public class MbUnitLocationProvider {
 
     private RuntimeWiring buildRuntimeWiring() {
         return RuntimeWiring.newRuntimeWiring()
-        		.scalar(ExtendedScalars.DateTime)
                 .type("Query", typeWiring -> typeWiring
                         .dataFetcher("allMbUnitLocations", mbUnitLocFetchers.getAllDataFetcher())
                         .dataFetcher("mbUnitLocationsById", mbUnitLocFetchers.getMbUnitLocByIdDataFetcher())
@@ -57,4 +59,23 @@ public class MbUnitLocationProvider {
                         .dataFetcher("mbUnitLocationsByFilter", mbUnitLocFetchers.getMbUnitLocFilterDataFetcher()))
                 .build();
     }
+    
+	private String getLoadSchema(InputStream is) throws IOException{
+		
+		String schema = "";
+		InputStreamReader isr = new InputStreamReader(is);
+		BufferedReader br = new BufferedReader(isr);
+		String line;
+		
+		while ((line = br.readLine()) != null) 
+		{
+			schema = schema + line;
+		}
+		br.close();
+		isr.close();
+		is.close();
+		
+		return schema;
+		
+	}
 }

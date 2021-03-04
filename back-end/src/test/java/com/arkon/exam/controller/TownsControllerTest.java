@@ -54,7 +54,7 @@ public class TownsControllerTest {
 	                .andExpect(jsonPath("$.data.town.name").value("La Magdalena Contreras"))
 	                .andReturn().getResponse().getContentAsString();
 	         
-	        logger.info("Query town Response: " + response);
+	        logger.info("town query Response: " + response);
 	    }
 	 
 	 @Test
@@ -67,7 +67,7 @@ public class TownsControllerTest {
 	                .andExpect(jsonPath("$.data.allTowns.length()").value(ALL_TOWNS))
 	                .andReturn().getResponse().getContentAsString();
 	         
-	        logger.info("Query allTowns Response: " + response);
+	        logger.info("allTowns query Response: " + response);
 	    }
 	 
 	 @Test
@@ -81,7 +81,7 @@ public class TownsControllerTest {
 	                .andExpect(jsonPath("$.data.allTowns.length()").value(ALL_TOWNS))
 	                .andReturn().getResponse().getContentAsString();
 	         
-	        logger.info("All Queries Response: " + response);
+	        logger.info("All queries Response: " + response);
 	    }
 	 
 	 

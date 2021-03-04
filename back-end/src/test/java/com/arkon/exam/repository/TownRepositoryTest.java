@@ -21,14 +21,14 @@ public class TownRepositoryTest {
 	
 	
 	@Test
-	    public void findAllTownstest() {
+	    public void findAllTownsTest() {
 	        assertEquals(ALL_TOWNS, townRepository.findAll().size());
 	        
 	}
 	
 	
 	@Test
-    public void fintTownById() {
+    public void findTownByIdTest() {
 		
         assertEquals(TOWN_NAME, townRepository.findById(TOWN_ID).get().getName());
         
