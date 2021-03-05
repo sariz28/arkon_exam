@@ -78,7 +78,7 @@ docker build -t arkon_exam .
 docker run --name arkon_exam -p 192.168.100.12:19000:19000 arkon_exam
 ```
 
-###Swagger
+### Swagger
 
 Se implementó swagger para la documentación de la API, para acceder a  Swagger UI:
 
