@@ -22,6 +22,7 @@ Se implementaron las siguientes tecnologías:
 * Spring Boot 2.4.2
 * GraphQL 5.0.2
 * Gradle 6.3
+* Swagger 2:2.5.0
 
 
 ### Procesamiento y almacenamiento de datos
@@ -76,6 +77,17 @@ docker build -t arkon_exam .
 ```sh
 docker run --name arkon_exam -p 192.168.100.12:19000:19000 arkon_exam
 ```
+
+###Swagger
+
+Se implementó swagger para la documentación de la API, para acceder a  Swagger UI:
+
+```
+http://localhost:19000/arkon-exam/swagger-ui.html#
+```
+
+<img src="../diagramas/swagger.png" width="800"  weight="600">
+
 
 ### Acerca de los servicios
 
