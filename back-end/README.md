@@ -3,7 +3,7 @@
 
 
 Esta API porporciona datos abiertos de la Ciudad de
-México correspondientes a la ubicación de las unidades del metrobús
+México correspondientes a las ubicaciones de las unidades del metrobús
 
 
 ### Tecnologías 
@@ -46,9 +46,9 @@ Para la compilación se implemento gradle, ejecutar la siguiente instrucción:
 ```
 ./gradlew clean build
 ```
-Despues de compilar el código, esta instrucción en automático ejecutara las pruebas unitarias de la capa Controller y Repository.
+Despues de compilar el código, esta instrucción en automático ejecutan las pruebas unitarias de la capa Controller y Repository.
 
-Podremos encontrar el código compilado (arkon_exam-0.0.1-SNAPSHOT.jar) en la carppeta **/build/libs**, para el despliegue de la API, ejecutar la siguiente instrucción:
+Podremos encontrar el código compilado (arkon_exam-0.0.1-SNAPSHOT.jar) en la carpeta **/build/libs**, para el despliegue de la API, ejecutar la siguiente instrucción:
 
 ```
 java -jar arkon_exam-0.0.1-SNAPSHOT.jar
@@ -61,7 +61,7 @@ Para correr las pruebas unitarias, ejecutar el siguiente comando:
 ```
 ./gradlew test
 ```
- Al finalizar gradle genera archivos de resultados de prueba HTML: directorio /build/reports/tests/
+ Al finalizar gradle genera archivos de resultados de prueba HTML: directorio **/build/reports/tests/**
  
  
  
@@ -96,7 +96,7 @@ Dado que la API implementa Graphql, las consultas que se pueden realizar son las
 
 
 
-**Url de acceso**
+**URL de acceso**
 
 ```
 Método POST  http://localhost:19000/arkon-exam/mb-unit-location
@@ -162,7 +162,7 @@ Consultas que se pueden realizar a través de este servicio son las siguientes:
 
 
 
-**Url de acceso**
+**URL de acceso**
 
 ```
 Método POST  http://localhost:19000/arkon-exam/towns
