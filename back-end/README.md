@@ -62,6 +62,20 @@ Para correr las pruebas unitarias, ejecutar el siguiente comando:
 ./gradlew test
 ```
  Al finalizar gradle genera archivos de resultados de prueba HTML: directorio /build/reports/tests/
+ 
+ 
+ 
+### Docker build
+
+```sh
+docker build -t arkon_exam .
+```
+
+### Docker run
+
+```sh
+docker run --name arkon_exam -p 192.168.100.12:19000:19000 arkon_exam
+```
 
 ### Acerca de los servicios
 
