@@ -68,30 +68,33 @@ Para correr las pruebas unitarias, ejecutar el siguiente comando:
 Se exponen dos servicios en la API:
 
 
-**Metrobus unit location Service** Provee información de las ubicaciones de las unidades del metrobús permitiendo filtrar por fecha, alcandía o el id de la unidad|
+* **Metrobus unit location Service** Provee información de las ubicaciones de las unidades del metrobús permitiendo filtrar por fecha, alcandía o el id de la unidad
+
 
 Dado que la API implementa Graphql, las consultas que se pueden realizar son las siguientes:
 
-* **allMbUnitLocations**: Retorna una lista de todas las ubicaciones de las unidades de metrobus
+| Consulta| descripción|
+| ----- | ---- |
+
+|**allMbUnitLocations**| Retorna una lista de todas las ubicaciones de las unidades de metrobus|
+|**mbUnitLocationsById**| (vehicleId): Retorna una lista de las ubicaciones de las unidades de metrobus dado un vehicleId|
+|**mbUnitLocationsByTow**(townId)|  Retorna una lista de las ubicaciones de las unidades de metrobus de una determinada alcaldía|
+
+|**mbUnitLocationsByFilter**(filter:{vehicleId date townId})| Esta consulta retorna una lista dependiendo del filtro especificado|
 
 
-* **mbUnitLocationsById**: (vehicleId): Retorna una lista de las ubicaciones de las unidades de metrobus dado un vehicleId
-
-
-* **mbUnitLocationsByTow**(townId):  Retorna una lista de las ubicaciones de las unidades de metrobus de una determinada alcaldía
-
-
-* **mbUnitLocationsByFilter**(filter:{vehicleId date townId}): Esta consulta retorna una lista dependiendo del filtro especificado
 
 
 * **Towns Service**: Provee una lista de alcaldías disponibles
 
+
 Consultas que se pueden realizar a través de este servicio son las siguientes:
 
-* allTowns: retorna una lista de todas las alcaldías de la CMDX
-* town(id:Int): retorna una alcaldía dado un id
 
 
-| TITULO1| TITULO2|
+| Consulta| descripción|
 | ----- | ---- |
-| CONTENIDO COLUMNA 1 | CONTENIDO COLUMNA 2 |
+
+|**allTowns**| Retorna una lista de todas las alcaldías de la CMDX
+|**town(id:Int)**| Retorna una alcaldía dado un id
+
