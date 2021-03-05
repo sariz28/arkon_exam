@@ -11,12 +11,12 @@ México correspondientes a la ubicación de las unidades del metrobús mediante 
 Se implemetaron las siguientes tecnologías:
 
 
-** Procesamiento y almacenamiento de datos:**
+**Procesamiento y almacenamiento de datos:**
 
 * Python 3.0 (GeoPandas)
 * Sql Server 15.0.4102.2-4
 
-** API:**
+**API:**
 
 
 * Spring Boot 2.4.2
@@ -75,11 +75,9 @@ Dado que la API implementa Graphql, las consultas que se pueden realizar son las
 
 | Consulta| descripción|
 | ----- | ---- |
-
 |**allMbUnitLocations**| Retorna una lista de todas las ubicaciones de las unidades de metrobus|
 |**mbUnitLocationsById**| (vehicleId): Retorna una lista de las ubicaciones de las unidades de metrobus dado un vehicleId|
 |**mbUnitLocationsByTow**(townId)|  Retorna una lista de las ubicaciones de las unidades de metrobus de una determinada alcaldía|
-
 |**mbUnitLocationsByFilter**(filter:{vehicleId date townId})| Esta consulta retorna una lista dependiendo del filtro especificado|
 
 
@@ -94,7 +92,6 @@ Consultas que se pueden realizar a través de este servicio son las siguientes:
 
 | Consulta| descripción|
 | ----- | ---- |
-
 |**allTowns**| Retorna una lista de todas las alcaldías de la CMDX
 |**town(id:Int)**| Retorna una alcaldía dado un id
 
