@@ -1,0 +1,12 @@
+server: 
+  servlet.contextPath: /arkon-exam
+  port: 19000
+
+
+spring.datasource.url: jdbc:sqlserver://localhost;databaseName=db_name
+spring.datasource.username: 
+spring.datasource.password: 
+spring.datasource.driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+spring.jpa.show-sql: true
+spring.jpa.hibernate.dialect: org.hibernate.dialect.SQLServer2012Dialect
